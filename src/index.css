@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.animate-text {
+  background-size: 200% auto;
+  animation: shine 5s linear infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9333ea;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7e22ce;
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 30px rgba(147, 51, 234, 0.8);
+}
+
+/* Gradient border animation */
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(147, 51, 234, 0.5);
+  }
+  50% {
+    border-color: rgba(219, 39, 119, 0.5);
+  }
+}
+
+.animate-border {
+  border: 2px solid transparent;
+  animation: borderGlow 3s infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Skill bar animation */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+}
+
+.skill-bar {
+  animation: fillBar 1.5s ease-out forwards;
+}
+
+/* Particle effect */
+@keyframes particle {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  pointer-events: none;
+  animation: particle 1s linear forwards;
+}
